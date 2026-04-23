@@ -56,6 +56,12 @@ const Navbar = () => {
             <Link to="/courses" className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
               Courses
             </Link>
+            <Link to="/faculty" className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              Faculty
+            </Link>
+            <Link to="/study-materials" className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              Study Materials
+            </Link>
 
             {/* Theme Toggle */}
             <button
@@ -145,6 +151,20 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Courses
+            </Link>
+            <Link
+              to="/faculty"
+              className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
+              Faculty
+            </Link>
+            <Link
+              to="/study-materials"
+              className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
+              Study Materials
             </Link>
 
             {isAuthenticated ? (

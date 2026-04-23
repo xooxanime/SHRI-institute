@@ -5,6 +5,8 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetail from './pages/CourseDetail';
+import Faculty from './pages/Faculty';
+import StudyMaterials from './pages/StudyMaterials';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
@@ -16,11 +18,14 @@ import StudentDashboard from './pages/student/Dashboard';
 import MyCourses from './pages/student/MyCourses';
 import CourseContent from './pages/student/CourseContent';
 import LiveClasses from './pages/student/LiveClasses';
+import ProgressTracking from './pages/student/ProgressTracking';
 import Profile from './pages/student/Profile';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminCourses from './pages/admin/Courses';
+import AdminFaculty from './pages/admin/Faculty';
+import AdminStudyMaterials from './pages/admin/StudyMaterials';
 import AdminEnrollments from './pages/admin/Enrollments';
 import AdminStudents from './pages/admin/Students';
 import AdminLiveClasses from './pages/admin/LiveClasses';
@@ -43,6 +48,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:id" element={<CourseDetail />} />
+            <Route path="/faculty" element={<Faculty />} />
+            <Route path="/study-materials" element={<StudyMaterials />} />
             <Route path="/login" element={<Login />} />
             <Route path="/test-login" element={<TestLogin />} />
             <Route path="/register" element={<Register />} />
@@ -70,6 +77,11 @@ function App() {
                 <LiveClasses />
               </PrivateRoute>
             } />
+            <Route path="/student/progress" element={
+              <PrivateRoute>
+                <ProgressTracking />
+              </PrivateRoute>
+            } />
             <Route path="/student/profile" element={
               <PrivateRoute>
                 <Profile />
@@ -85,6 +97,16 @@ function App() {
             <Route path="/admin/courses" element={
               <AdminRoute>
                 <AdminCourses />
+              </AdminRoute>
+            } />
+            <Route path="/admin/faculty" element={
+              <AdminRoute>
+                <AdminFaculty />
+              </AdminRoute>
+            } />
+            <Route path="/admin/study-materials" element={
+              <AdminRoute>
+                <AdminStudyMaterials />
               </AdminRoute>
             } />
             <Route path="/admin/enrollments" element={

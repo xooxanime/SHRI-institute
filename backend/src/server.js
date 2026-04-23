@@ -11,6 +11,9 @@ import studentRoutes from './routes/studentRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
 import liveClassRoutes from './routes/liveClassRoutes.js';
+import facultyRoutes from './routes/facultyRoutes.js';
+import studyMaterialRoutes from './routes/studyMaterialRoutes.js';
+import progressRoutes from './routes/progressRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 // Load environment variables
@@ -51,6 +54,9 @@ app.use('/api/student', studentRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/live', liveClassRoutes);
+app.use('/api/faculty', facultyRoutes);
+app.use('/api/study-materials', studyMaterialRoutes);
+app.use('/api/progress', progressRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {

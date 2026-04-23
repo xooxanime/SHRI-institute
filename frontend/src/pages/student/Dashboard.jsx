@@ -32,19 +32,29 @@ const Dashboard = () => {
       icon: <FiBook className="w-8 h-8" />,
       label: 'Total Enrolled',
       value: dashboardData?.stats.totalEnrolled || 0,
-      color: 'bg-blue-500'
+      color: 'bg-blue-500',
+      link: '/student/my-courses'
     },
     {
       icon: <FiClock className="w-8 h-8" />,
       label: 'In Progress',
       value: dashboardData?.stats.inProgress || 0,
-      color: 'bg-yellow-500'
+      color: 'bg-yellow-500',
+      link: '/student/my-courses'
     },
     {
       icon: <FiCheckCircle className="w-8 h-8" />,
       label: 'Completed',
       value: dashboardData?.stats.completed || 0,
-      color: 'bg-green-500'
+      color: 'bg-green-500',
+      link: '/student/my-courses'
+    },
+    {
+      icon: <FiTrendingUp className="w-8 h-8" />,
+      label: 'Track Progress',
+      value: 'View',
+      color: 'bg-purple-500',
+      link: '/student/progress'
     }
   ];
 
@@ -62,9 +72,9 @@ const Dashboard = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
-            <div key={index} className="card">
+            <Link key={index} to={stat.link} className="card hover:shadow-lg transition-shadow">
               <div className="flex items-center space-x-4">
                 <div className={`${stat.color} text-white p-3 rounded-lg`}>
                   {stat.icon}
@@ -76,7 +86,7 @@ const Dashboard = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

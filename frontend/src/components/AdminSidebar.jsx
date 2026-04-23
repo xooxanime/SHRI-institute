@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { FiHome, FiBook, FiUsers, FiUserCheck, FiVideo, FiSettings, FiBarChart2 } from 'react-icons/fi';
+import { FiHome, FiBook, FiUsers, FiUserCheck, FiVideo, FiSettings, FiBarChart2, FiAward, FiFile } from 'react-icons/fi';
 
 const AdminSidebar = () => {
   const location = useLocation();
@@ -7,6 +7,8 @@ const AdminSidebar = () => {
   const menuItems = [
     { path: '/admin/dashboard', icon: <FiBarChart2 />, label: 'Dashboard' },
     { path: '/admin/courses', icon: <FiBook />, label: 'Courses' },
+    { path: '/admin/faculty', icon: <FiAward />, label: 'Faculty' },
+    { path: '/admin/study-materials', icon: <FiFile />, label: 'Study Materials' },
     { path: '/admin/enrollments', icon: <FiUserCheck />, label: 'Enrollments' },
     { path: '/admin/students', icon: <FiUsers />, label: 'Students' },
     { path: '/admin/live-classes', icon: <FiVideo />, label: 'Live Classes' },

@@ -85,7 +85,36 @@ export const adminAPI = {
   startLiveClass: (id, data) => api.post(`/live/${id}/start`, data),
   endLiveClass: (id, data) => api.post(`/live/${id}/end`, data),
   updateLiveClass: (id, data) => api.put(`/live/${id}`, data),
-  deleteLiveClass: (id) => api.delete(`/live/${id}`)
+  deleteLiveClass: (id) => api.delete(`/live/${id}`),
+  
+  // Faculty
+  getAllFaculty: () => api.get('/faculty'),
+  createFaculty: (data) => api.post('/faculty', data),
+  updateFaculty: (id, data) => api.put(`/faculty/${id}`, data),
+  deleteFaculty: (id) => api.delete(`/faculty/${id}`),
+  
+  // Study Materials
+  getAllStudyMaterials: () => api.get('/study-materials'),
+  createStudyMaterial: (data) => api.post('/study-materials', data),
+  updateStudyMaterial: (id, data) => api.put(`/study-materials/${id}`, data),
+  deleteStudyMaterial: (id) => api.delete(`/study-materials/${id}`)
+};
+
+// Faculty APIs
+export const facultyAPI = {
+  getAll: () => api.get('/faculty')
+};
+
+// Study Material APIs
+export const studyMaterialAPI = {
+  getAll: (params) => api.get('/study-materials', { params }),
+  download: (id) => api.post(`/study-materials/${id}/download`)
+};
+
+// Progress APIs
+export const progressAPI = {
+  getMyProgress: () => api.get('/progress'),
+  getCourseProgress: (courseId) => api.get(`/progress/${courseId}`)
 };
 
 export default api;
